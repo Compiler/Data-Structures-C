@@ -5,7 +5,7 @@
 
 int main(){
 	
-
+	init();
 	add(2);
 	add(4);
 	add(8);
