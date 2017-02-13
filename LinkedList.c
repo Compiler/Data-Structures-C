@@ -8,12 +8,18 @@ void init(void){
 }
 
 void add(int newVar){
-	node_t *ref = head;
-	while(ref != NULL){
-		ref = ref->next;
+	if(head == NULL){
+		head = malloc(sizeof(node_t));
+		head->var = newVar;
+		return;
 	}
-	ref = malloc(sizeof(node_t));
-	ref->var= newVar;
+	node_t *ref = head;
+	while(head != NULL){
+		head = head->next;
+	}
+	head = malloc(sizeof(node_t));
+	head->var= newVar;
+	head = ref;
 }
 
 void resize(void){
@@ -22,11 +28,13 @@ void resize(void){
 }
 
 void printAll(void){
+	printf("Displaying List...\n");
 	node_t *ref = head;
 	while(ref != NULL){
-		printf("%d\t", ref->var);
+		printf("%d-\t", ref->var);
 		ref = ref->next;
 	}
+
 }
 
 int get(int index){
