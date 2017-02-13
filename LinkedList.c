@@ -41,13 +41,16 @@ int get(int index){
 
 	node_t *ref = head;
 	int count = 0;
-	while(ref->next != NULL){
+	while(ref != NULL){
 		
 		if(count == index){
 			return ref->var;
 		}
-		ref = head->next;
+		ref = ref->next;
+		count++;
 	}
+
+	return -1;
 
 
 }

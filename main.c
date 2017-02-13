@@ -12,7 +12,8 @@ int main(){
 	add(16);
 	add(32);
 	printAll();
-
+	
+	printf("Getting second element: %d", get(1));
 	printf("Goodbye\n");
 	
 	return 0;
