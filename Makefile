@@ -2,7 +2,7 @@
 
 
 run:
-	gcc main.c
+	gcc main.c -w LinkedList.c
 	./a.out
 
 

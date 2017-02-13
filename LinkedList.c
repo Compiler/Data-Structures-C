@@ -1,21 +1,37 @@
 
-
-#include <stdio.h>
-
+#include "LinkedList.h"
 
 
 
-int main(){
-	
-	int input;
 
-	while(input != -1){
-		printf("Please print a number:");
-		scanf("%d", &input);
-		printf("Entered: %d\n", input);
 
+void add(int newVar){
+	printf("Heads current var: %d", head->var);
+	if(head == NULL){
+		head = malloc(sizeof(node_t));
+		head->var = newVar;
+	}else{
+		node_t *ref = head->next;
+		while(ref != NULL){
+			ref = head->next;
+		}
+
+
+		ref = malloc(sizeof(node_t));
+		ref->var= newVar;
 	}
+}
 
-	printf("Goodbye\n");
-	return 0;
+void printAll(void){
+	node_t *ref = head;
+	while(head != NULL){
+		printf("%d\t", head->var);
+		head = head->next;
+	}
+}
+
+int get(int index){
+	
+
+
 }
