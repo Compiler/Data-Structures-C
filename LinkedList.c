@@ -3,11 +3,8 @@
 
 
 
-void init(void){
-	buffer = malloc(sizeof(node_t) * BUFFER_SIZE);
-}
-
 void add(int newVar){
+	curSize++;
 	if(head == NULL){
 		head = malloc(sizeof(node_t));
 		head->var = newVar;
@@ -22,16 +19,12 @@ void add(int newVar){
 	head = ref;
 }
 
-void resize(void){
-	static int occurences = 1;
-	buffer = realloc(buffer, ++occurences * BUFFER_SIZE);	
-}
-
 void printAll(void){
 	printf("Displaying List...\n");
 	node_t *ref = head;
+	int count = 0;
 	while(ref != NULL){
-		printf("%d-\t", ref->var);
+		printf("%d-  %d\n", count++, ref->var);
 		ref = ref->next;
 	}
 
@@ -53,4 +46,10 @@ int get(int index){
 	return -1;
 
 
+}
+
+
+
+int size(void){
+	return curSize;
 }

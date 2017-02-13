@@ -5,7 +5,6 @@
 
 int main(){
 	
-	init();
 	add(2);
 	add(4);
 	add(8);
@@ -13,8 +12,8 @@ int main(){
 	add(32);
 	printAll();
 	
-	printf("Getting second element: %d", get(1));
-	printf("Goodbye\n");
+	printf("Getting second element: %d\n", get(1));
+	printf("\nGoodbye\n");
 	
 	return 0;
 }
