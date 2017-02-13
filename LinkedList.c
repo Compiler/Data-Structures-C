@@ -14,11 +14,11 @@ void add(int newVar){
 		return;
 	}
 	node_t *ref = head;
-	while(head != NULL){
+	while(head->next != NULL){
 		head = head->next;
 	}
-	head = malloc(sizeof(node_t));
-	head->var= newVar;
+	head->next = malloc(sizeof(node_t));
+	head->next->var= newVar;
 	head = ref;
 }
 
